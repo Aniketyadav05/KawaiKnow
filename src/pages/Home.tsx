@@ -15,11 +15,7 @@ const Home = () => {
     const [error, setError] = useState<string | null>(null);
     const [searchParams, setSearchParams] = useState<string>("")
     const [loading, setLoading] = useState<boolean>(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    
-    useEffect(() => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }, [currentPage]); // ✅ Runs every time `currentPage` changes
+  
     useEffect(() => {
       if (characters.length > 0) {
           document.body.style.overflow = "auto"; // Enable scrolling when characters are loaded
@@ -31,43 +27,44 @@ const Home = () => {
       };
   }, [characters]);
     
-    const handleSearch = () => {
-      if(searchParams.trim() === ""){
-        setCharacters([]);
-        setError(null);
-        return
-      }
-      setLoading(true);
-        const getCharacters = async ()=>{
-          
-          try {
-            const data = await fetchCharacters(searchParams, currentPage);
-            if(data.length === 0){
-              setError("NO CHARACTERS FOUND");
-              setCharacters([])
-            }
-            else{
-              setCharacters(data);
-              setError(null)
-            }
-          } catch (error) {
-            setError("Failed to fetch data")
-            setCharacters([])
-            console.log(error);
-            
-          }
-          finally{
-            setLoading(false)
-          }
+  const handleSearch = () => {
+    if (searchParams.trim() === "") {
+      setCharacters([]);
+      setError(null);
+
+    }
+  
+    setLoading(true);
+    
+
+  
+    const getCharacters = async () => {
+      try {
+        const data = await fetchCharacters(searchParams);
+        if (data.length === 0) {
+          setError("NO CHARACTERS FOUND");
+          setCharacters([]);
+        } else {
+          setCharacters(data);
+          setError(null);
         }
-        const timer = setTimeout(() => {
-          getCharacters();
-          
-        },2000)
-        
-        return () => clearTimeout(timer)
-        
+      } catch (error) {
+        setError("Failed to fetch data");
+        setCharacters([]);
+        console.log(error);
+      } finally {
+        setLoading(false);
       }
+    };
+    
+    const timer = setTimeout(() => {
+      getCharacters();
+    }, 1000);
+  
+    return () => clearTimeout(timer);
+  };
+  
+  
     
     
       return (
@@ -83,23 +80,18 @@ const Home = () => {
       >
         Search
       </button>
-        {characters.length === 0 && <HeroSection/>}
-          {loading && <p>Searching........</p>}
+        {characters.length === 0 &&!loading && <HeroSection/>}
+          { loading && <p>Searching........</p>}
           {error && <ErrorCard message={error} onRetry={() => setSearchParams(searchParams)} />}
-    
-        
           
             <div className="flex flex-col items-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-[60%]">
             {loading ? (
               [...Array(3)].map((_,index) => <SkeletonCard key={index}/>)
             ) : (
-            
-              characters.map((char) => (
-                
-              <div key={char.mal_id}>
+              characters.map((char) => (  
+                <div key={char.mal_id}>
                 <Card  character={char} />
-                
           </div>
             
             ))
@@ -107,27 +99,7 @@ const Home = () => {
             )}
             </div>
             
-      {
-        characters.length>1 &&
-        <div className="flex justify-center items-center gap-4 m-4"> 
-        <button 
-        className="px-4 py-2 bg-gray-700 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
-        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-        disabled={currentPage === 1}
-      >
-        Previous
-      </button>
-    
-      <span className="text-white ">Page {currentPage}</span>
-    
-      <button 
-        className="px-4 py-2 bg-gray-700 text-white rounded disabled:cursor-not-allowed cursor-pointer"
-        onClick={() => setCurrentPage((prev) => prev + 1)}
-      >
-        Next
-      </button>
-    </div>
-      }
+          
     
             </div>
           
