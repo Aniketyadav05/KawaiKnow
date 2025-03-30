@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# [Know Kawai - Anime Character Explorer](https://kawai-know.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Know Kawai is a sleek and interactive web application that lets users search and explore anime characters. With a cyberpunk-inspired UI and seamless API integration, it delivers an engaging experience for anime enthusiasts.
 
-Currently, two official plugins are available:
+## ✨ Features
+- 🔍 **Search Anime Characters** – Fetches character data dynamically using an API.
+- 🎭 **Beautiful UI** – Cyberpunk-styled design with glitch effects and smooth animations.
+- 🖼 **Anime Character Cards** – Displays character details in an elegant grid layout.
+- ⚡ **Skeleton Loading & Error Handling** – Ensures a smooth UX with loaders and error messages.
+- 📜 **Pagination** – Browse multiple pages of search results effortlessly.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
+- **Frontend:** React, TypeScript, TailwindCSS, Framer Motion
+- **Backend:** Express.js (for AI API calls)
+- **Database:** Supabase (for storing user-generated content)
+- **API:** Jikan API (for anime character data)
 
-## Expanding the ESLint configuration
+## 🛠 Installation & Setup
+Follow these steps to set up the project locally:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone the Repository**
+   ```sh
+   git clone https://github.com/yourusername/know-kawai.git
+   cd know-kawai
+   ```
+2. **Install Dependencies**
+   ```sh
+   npm install
+   ```
+3. **Start the Development Server**
+   ```sh
+   npm run dev
+   ```
+4. **Open in Browser**
+   Visit `http://localhost:5173` (or the port specified in Vite).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🔧 Environment Variables
+Create a `.env` file and add the following:
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📌 Roadmap
+- [ ] Implement AI-generated anime character recommendations
+- [ ] Add user authentication for saving favorite characters
+- [ ] Enhance UI with more dynamic glitch effects
+
+## 🤝 Contributing
+We welcome contributions! To contribute:
+1. Fork the repository
+2. Create a new branch (`feature-branch`)
+3. Commit your changes
+4. Push and create a pull request
+
+## ⚡ Deployment
+This project is deployed on **Vercel**. To deploy your own version:
+1. Push to GitHub
+2. Connect to Vercel and select the repo
+3. Configure environment variables
+4. Deploy!
+
+## 📜 License
+MIT License. Feel free to use and modify this project.
+
+---
+Made with ❤️ by [Aniket Yadav]
+
