@@ -62,7 +62,7 @@ const Home = () => {
     
     
       return (
-        <div className="relative h-screen text-white flex flex-col items-center justify-center ">
+        <div className="min-h-screen overflow-hidden text-white flex flex-col items-center justify-center ">
           <h1 className="font-[Alaska] text-6xl my-16">KNOW KAWAI</h1>
           <input 
           className="border-4 border-white p-2 font-bold font-[Campus] text-amber-400" 
@@ -74,8 +74,7 @@ const Home = () => {
       >
         Search
       </button>
-      {characters.length === 0 && 
-      <HeroSection/>}
+        {characters.length === 0 && <HeroSection/>}
           {loading && <p>Searching........</p>}
           {error && <ErrorCard message={error} onRetry={() => setSearchParams(searchParams)} />}
     
@@ -86,7 +85,9 @@ const Home = () => {
             {loading ? (
               [...Array(3)].map((_,index) => <SkeletonCard key={index}/>)
             ) : (
+            
               characters.map((char) => (
+                
               <div key={char.mal_id}>
                 <Card  character={char} />
                 <button 
@@ -98,12 +99,13 @@ const Home = () => {
           </div>
             
             ))
+          
             )}
             </div>
             
       {
         characters.length>1 &&
-        <div className="flex justify-center items-center gap-4 mt-4"> 
+        <div className="flex justify-center items-center gap-4 m-4"> 
         <button 
         className="px-4 py-2 bg-gray-700 text-white rounded disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
         onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
