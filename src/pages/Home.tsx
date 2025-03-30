@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 import Card from "../components/Card";
 
@@ -16,11 +16,20 @@ const Home = () => {
     const [searchParams, setSearchParams] = useState<string>("")
     const [loading, setLoading] = useState<boolean>(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const navigate = useNavigate();
+    
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }, [currentPage]); // ✅ Runs every time `currentPage` changes
-    
+    useEffect(() => {
+      if (characters.length > 0) {
+          document.body.style.overflow = "auto"; // Enable scrolling when characters are loaded
+      } else {
+          document.body.style.overflow = "hidden"; // Disable scrolling when on the home page
+      }
+      return () => {
+          document.body.style.overflow = "auto"; // Reset on unmount
+      };
+  }, [characters]);
     
     const handleSearch = () => {
       if(searchParams.trim() === ""){
@@ -62,15 +71,15 @@ const Home = () => {
     
     
       return (
-        <div className="min-h-screen overflow-hidden text-white flex flex-col items-center justify-center ">
+        <div className="overflow-hidden  flex flex-col items-center justify-center ">
           <h1 className="font-[Alaska] text-6xl my-16">KNOW KAWAI</h1>
           <input 
-          className="border-4 border-white p-2 font-bold font-[Campus] text-amber-400" 
+          className="border-4 border-[#FFC107] p-2 font-bold font-[Campus] " 
           type="text" value={searchParams} 
           onChange={(e) => setSearchParams(e.target.value)}/>
           <button
         onClick={handleSearch}
-        className="mt-4 px-6 py-2 bg-amber-500 text-black font-bold rounded-lg"
+        className="mt-4 px-6 py-2 bg-amber-500 text-black font-bold rounded-lg hover:brightness-75  cursor-pointer "
       >
         Search
       </button>
@@ -90,12 +99,7 @@ const Home = () => {
                 
               <div key={char.mal_id}>
                 <Card  character={char} />
-                <button 
-            className="mt-2 p-2 bg-blue-500 text-white rounded" 
-            onClick={() => navigate(`/character/${char.mal_id}`)}
-          >
-            View Details
-          </button>
+                
           </div>
             
             ))

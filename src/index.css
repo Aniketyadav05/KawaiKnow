@@ -11,6 +11,30 @@
     src: url("./Fonts/Freshman.ttf");
 }
 @import "tailwindcss";
-body{
-    background: #000;
-}
+/* Disable scrolling globally */
+/* Hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Ensure scrolling is still enabled */
+ 
+  
+html, body {
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  
+ 
+  
+  body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background-attachment: fixed;
+    color: #FFC107;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+  
+ 

@@ -17,17 +17,21 @@ const CharacterDetails = () => {
     getCharacter();
   }, [id]);
 
-  if (!character) return <p>Loading...</p>;
+  if (!character) return <div className="flex items-center justify-center mt-[20%] text-6xl font-extrabold">
+    <p>Loading...</p>
+  </div>;
 
   return (
     <div className="p-10 ">
-      <button className="p-2 bg-gray-700 text-white rounded" onClick={() => navigate(-1)}>
+      <button className="p-2 bg-gray-700  rounded" onClick={() => navigate(-1)}>
         Back
       </button>
       <div className="flex flex-col items-center justify-center">
-      <h1 className="text-4xl my-4 text-white">{character.name}</h1>
-      <img src={character.images.jpg.image_url} alt={character.name} />
-      <p className="mt-4 text-white">{character.about || "no data available"}</p>
+      <h1 className="text-4xl my-4 font-[Alaska] tracking-wider">{character.name}</h1>
+      <div className=" backdrop-blur-lg bg-white/10 border-b border-white/20 shadow-md shadow-amber-500 p-5">
+      <img  src={character.images.jpg.image_url} alt={character.name} />
+      </div>
+      <p className="mt-4 font-bold text-xl mx-4">{character.about || "no data available"}</p>
       </div>
     </div>
   );

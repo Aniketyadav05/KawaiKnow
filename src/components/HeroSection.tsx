@@ -15,7 +15,7 @@ const HeroSection = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-black text-white">
+    <div className=" flex flex-col items-center justify-center h-screen bg-black text-white">
 
       {/* Floating Anime Images */}
       
@@ -23,7 +23,7 @@ const HeroSection = () => {
       <motion.img
         src={luffy}
         alt="Goku"
-        className="absolute bottom-100 right-0 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-100 right-0 w-24 md:w-32 "
         initial={{ x: 200, opacity: 0 }}  // Start below the screen
         animate={{ x: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }} // Smooth animation
@@ -31,7 +31,7 @@ const HeroSection = () => {
             <motion.img
         src={asta}
         alt="Goku"
-        className="absolute bottom-0 right-80 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 right-80 w-24 md:w-32 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }} // Smooth animation
@@ -40,7 +40,7 @@ const HeroSection = () => {
       <motion.img
         src={devil}
         alt="Tanjiro"
-        className="absolute bottom-0 right-0 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 -right-7 w-24 md:w-32 "
         initial={{ x: 200, opacity: 0 }}  // Start below the screen
         animate={{ x: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }} // Smooth animation
@@ -48,7 +48,7 @@ const HeroSection = () => {
       <motion.img
         src={eren}
         alt="Tanjiro"
-        className="absolute bottom-0 left-110 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 left-110 w-24 md:w-32 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
@@ -56,7 +56,7 @@ const HeroSection = () => {
       <motion.img
         src={itachi}
         alt="Tanjiro"
-        className="absolute bottom-0 right-40 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 right-40 w-24 md:w-32 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
@@ -64,7 +64,7 @@ const HeroSection = () => {
       <motion.img
         src={goku}
         alt="Tanjiro"
-        className="absolute  right-120 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute  bottom-0 right-120 w-24 md:w-32 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
@@ -72,7 +72,7 @@ const HeroSection = () => {
       <motion.img
         src={kakashi}
         alt="Tanjiro"
-        className="absolute bottom-0 left-85 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 left-85 w-24 md:w-32 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
@@ -80,16 +80,16 @@ const HeroSection = () => {
       <motion.img
         src={mikasa}
         alt="Tanjiro"
-        className="absolute bottom-100 left-0 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-100 left-0 w-24 md:w-32 "
         initial={{ x: -200, opacity: 0 }}  // Start below the screen
-        animate={{ x: 0, opacity: 1 }}  // Move to normal position
+        animate={{ x: -10, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }} // Smooth animation
       />
            
             <motion.img
         src={spidy}
         alt="Goku"
-        className="absolute top-0 left-20 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute top-0 left-20 w-24 md:w-32 "
         initial={{ y: -200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
@@ -98,7 +98,7 @@ const HeroSection = () => {
        <motion.img
         src={nezuko}
         alt="Goku"
-        className="absolute bottom-0 left-0 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 left-0 w-24 md:w-32 "
         initial={{ x: -200, opacity: 0 }}  // Start below the screen
         animate={{ x: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }} // Smooth animation
@@ -106,7 +106,7 @@ const HeroSection = () => {
             <motion.img
         src={tanjiro}
         alt="Goku"
-        className="absolute bottom-0 left-30 w-24 md:w-32 rounded-lg shadow-lg"
+        className="absolute bottom-0 left-30 w-24 md:w-32 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
@@ -114,7 +114,7 @@ const HeroSection = () => {
             <motion.img
         src={team7}
         alt="Goku"
-        className="absolute bottom-0 left-175 w-28 md:w-32 rounded-lg shadow-lg size-36 "
+        className="absolute bottom-0 left-175 w-28 md:w-32  size-36 "
         initial={{ y: 200, opacity: 0 }}  // Start below the screen
         animate={{ y: 0, opacity: 1 }}  // Move to normal position
         transition={{ duration: 2, ease: "easeOut" }}
