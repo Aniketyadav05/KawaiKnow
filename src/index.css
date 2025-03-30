@@ -1,1 +1,16 @@
+@font-face {
+    font-family: Alaska;
+    src: url("./Fonts/Alaska.ttf");
+}
+@font-face {
+    font-family: Campus;
+    src: url("./Fonts/Campus.ttf");
+}
+@font-face {
+    font-family: Fresh;
+    src: url("./Fonts/Freshman.ttf");
+}
 @import "tailwindcss";
+body{
+    background: #000;
+}
