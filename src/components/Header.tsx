@@ -11,8 +11,8 @@ const Header = () => {
           </Link>
           <nav className="space-x-6 flex items-center  ">
             <Link to={`/character/${randomId}`} className="text-l tracking-widest hover:text-amber-400">Random Character</Link>
-            <Link to="" className=" hover:text-amber-400"><FaXTwitter/></Link>
-            <Link to="/" className=" hover:text-amber-400"><FaGithub/></Link>
+            <Link to="https://x.com/AniketYadav05_" target="_blank" className=" hover:text-amber-400"><FaXTwitter/></Link>
+            <Link to="https://github.com/Aniketyadav05" target="_blank" className=" hover:text-amber-400"><FaGithub/></Link>
           </nav>
         </div>
       </header>

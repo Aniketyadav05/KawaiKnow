@@ -1,10 +1,15 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, ReactNode } from "react";
 import { useInView } from "framer-motion";
 
-const FadeInWrapper = ({ children, className = "" }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
+interface FadeInWrapperProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const FadeInWrapper: React.FC<FadeInWrapperProps> = ({ children, className = "" }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 }); // ✅ Fixed `triggerOnce` issue
 
   return (
     <motion.div
