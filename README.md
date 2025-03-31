@@ -9,11 +9,6 @@ Know Kawai is a sleek and interactive web application that lets users search and
 - ⚡ **Skeleton Loading & Error Handling** – Ensures a smooth UX with loaders and error messages.
 - 📜 **Pagination** – Browse multiple pages of search results effortlessly.
 
-## 🚀 Tech Stack
-- **Frontend:** React, TypeScript, TailwindCSS, Framer Motion
-- **Backend:** Express.js (for AI API calls)
-- **Database:** Supabase (for storing user-generated content)
-- **API:** Jikan API (for anime character data)
 
 ## 🛠 Installation & Setup
 Follow these steps to set up the project locally:
@@ -33,13 +28,6 @@ Follow these steps to set up the project locally:
    ```
 4. **Open in Browser**
    Visit `http://localhost:5173` (or the port specified in Vite).
-
-## 🔧 Environment Variables
-Create a `.env` file and add the following:
-```
-VITE_SUPABASE_URL=your_supabase_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
 
 
 
